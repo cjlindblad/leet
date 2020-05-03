@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+import sys
+
+letters = {
+    'a': '4',
+    'e': '3',
+    'g': '6',
+    'l': '1',
+    'o': '0',
+    's': '5'
+}
+
+def translate(string):
+    result = ''.join([letters.get(c, c) for c in string])
+    return result
+
+def main():
+    string = ''
+    if len(sys.argv) > 1:
+        string = sys.argv[1]
+    else:
+        string = sys.stdin.read()
+
+    result = translate(string)
+    sys.stdout.write(f'{result}\n')
+
+if __name__ == '__main__':
+    main()
